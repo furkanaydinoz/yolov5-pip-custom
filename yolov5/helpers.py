@@ -36,7 +36,7 @@ def load_model(
 
     try:
         model = DetectMultiBackend(
-            model_path, device=device, fuse=autoshape, hf_token=hf_token
+            model_path, device=device, fuse=autoshape, hf_token=hf_token, fp16=half
         )  # detection model
         if autoshape:
             if model.pt and isinstance(model.model, ClassificationModel):
